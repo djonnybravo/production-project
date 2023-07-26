@@ -2,9 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack')
 
+
+
 module.exports = {
     mode: 'development',
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, 'build'),
@@ -13,5 +15,8 @@ module.exports = {
     module: {
         rules: [{ test: /\.txt$/, use: 'raw-loader' }],
     },
-    plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
+    plugins: [
+        new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }),
+        new webpack.ProgressPlugin()
+    ],
 }
