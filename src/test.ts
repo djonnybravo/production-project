@@ -1,3 +1,4 @@
-export function someFn() {
+export function someFn(arg: number): string {
     console.log('someFn()')
+    return `${arg}`
 }
