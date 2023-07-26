@@ -3,7 +3,7 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 
-module.exports = {
+const webpackConfig: webpack.Configuration = {
     mode: 'development',
     entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
@@ -28,3 +28,5 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
 }
+
+export default webpackConfig
