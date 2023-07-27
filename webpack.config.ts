@@ -1,6 +1,8 @@
 import path from 'path'
 import webpack from 'webpack'
-import HtmlWebpackPlugin from "html-webpack-plugin";
+
+import {buildPlugins} from "./config/build/buildPlugins";
+import {buildLoaders} from "./config/build/buildLoaders";
 
 
 const webpackConfig: webpack.Configuration = {
@@ -11,18 +13,9 @@ const webpackConfig: webpack.Configuration = {
         path: path.resolve(__dirname, 'build'),
         clean: true,
     },
-    plugins: [
-        new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }),
-        new webpack.ProgressPlugin()
-    ],
+    plugins: buildPlugins(),
     module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
+        rules: buildLoaders(),
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
