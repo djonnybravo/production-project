@@ -1,6 +1,5 @@
 import path from 'path'
 import webpack from 'webpack'
-
 import {buildPlugins} from "./config/build/buildPlugins";
 import {buildLoaders} from "./config/build/buildLoaders";
 import {buildResolvers} from "./config/build/buildResolvers";
