@@ -2,6 +2,6 @@
 import {render} from "react-dom";
 
 render(
-    <div></div>,
+    <div>Hellosdasdas World</div>,
     document.getElementById('root')
 )
