@@ -1,12 +1,14 @@
 import React from 'react';
-import {Counter} from "./components/counter";
 import './index.scss'
+import {Route, Routes} from "react-router-dom";
 
 const App = () => {
     return (
         <div className={'App'}>
-            asdasdasd
-            <Counter/>
+            <Routes>
+                <Route path={"/"} />
+                <Route path={"/about"} />
+            </Routes>
         </div>
     );
 };
