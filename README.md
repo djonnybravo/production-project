@@ -1,2 +1,2 @@
 # production-project
-This is production study project
+Учебный проект: от конфигурации вебпака до деплоя на реальный сервер. 
