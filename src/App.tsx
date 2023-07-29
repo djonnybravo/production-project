@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import './index.scss'
 import {Link, Route, Routes} from "react-router-dom";
 
@@ -9,13 +9,15 @@ const App = () => {
     return (
         <div className={'App'}>
             <div>
-              <Link to={'/'}>Главная</Link>
-              <Link to={'/about'}>О сайте</Link>
+                <Link to={'/'}>Главная</Link>
+                <Link to={'/about'}>О сайте</Link>
             </div>
-            <Routes>
-                <Route path={"/"} element={<MainPageAsync/>} />
-                <Route path={"/about"} element={<AboutPageAsync/>} />
-            </Routes>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path={"/"} element={<MainPageAsync/>}/>
+                    <Route path={"/about"} element={<AboutPageAsync/>}/>
+                </Routes>
+            </Suspense>
         </div>
     );
 };
