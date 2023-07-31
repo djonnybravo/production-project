@@ -1,4 +1,9 @@
+@import "variables/global";
+@import "reset";
+@import "themes/light";
+@import "themes/dark";
 
-.App {
+
+.app {
   font-size: 30px;
 }
