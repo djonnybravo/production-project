@@ -6,7 +6,7 @@ import {MainPageAsync} from "./pages/MainPage/MainPage.async";
 
 const App = () => {
     return (
-        <div className={'App'}>
+        <div className={'app dark'}>
             <div>
                 <Link to={'/'}>Главная</Link>
                 <Link to={'/about'}>О сайте</Link>
