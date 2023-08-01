@@ -4,7 +4,7 @@ import {Link, Route, Routes} from "react-router-dom";
 import {AboutPage} from "pages/AboutPage";
 import {MainPage} from "pages/MainPage";
 import {useTheme} from "app/providers/ThemeProvider";
-import {classNames} from "helpers/classNames/classNames";
+import {classNames} from "shared/lib/classNames/classNames";
 
 
 const App = () => {
