@@ -1,6 +1,6 @@
 export enum AppRoutes {
     MAIN = 'main',
-    ABOUT = 'abot'
+    ABOUT = 'about'
 }
 
 
