@@ -4,7 +4,7 @@
   "description": "This is production study project",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "unit": "jest --config ./config/jest/jest.config.ts",
     "build": "webpack",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
