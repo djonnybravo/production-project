@@ -1,4 +1,5 @@
 import React, { ErrorInfo, ReactNode } from 'react';
+import { PageError } from 'widgets/PageError';
 
 interface ErrorBoundaryProps {
     children: ReactNode
@@ -29,7 +30,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
             // You can render any custom fallback UI
 
             // eslint-disable-next-line i18next/no-literal-string
-            return <h1>Something went wrong.</h1>;
+            return <PageError />;
         }
 
         return children;
