@@ -1,5 +1,5 @@
-import { Button } from 'shared/ui/Button/Button';
 import { render, screen } from '@testing-library/react';
+import { Button } from 'shared/ui/Button/Button';
 
 describe('Button tests with React Testing library', () => {
     test('with first param', () => {
