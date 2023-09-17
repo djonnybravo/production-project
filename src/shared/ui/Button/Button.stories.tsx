@@ -1,49 +1,30 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
-import { Button } from './Button';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import 'app/styles/index.scss';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-const meta: Meta<typeof Button> = {
-    title: 'Example/Button',
+export default {
+    title: 'shared/Button',
     component: Button,
-    parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
-        layout: 'centered',
-    },
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+} as ComponentMeta<typeof Button>;
+
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+    children: 'Button',
 };
-
-export default meta;
-type Story = StoryObj<typeof Button>;
-
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
-    args: {
-        primary: true,
-        label: 'Button',
-    },
+export const ClearTheme = Template.bind({});
+ClearTheme.args = {
+    children: 'Button',
+    theme: ThemeButton.CLEAR,
 };
-
-export const Secondary: Story = {
-    args: {
-        label: 'Button',
-    },
-};
-
-export const Large: Story = {
-    args: {
-        size: 'large',
-        label: 'Button',
-    },
-};
-
-export const Small: Story = {
-    args: {
-        size: 'small',
-        label: 'Button',
-    },
+export const OutlineTheme = Template.bind({});
+OutlineTheme.args = {
+    children: 'Button',
+    theme: ThemeButton.OUTLINE,
 };
